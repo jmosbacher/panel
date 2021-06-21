@@ -109,6 +109,9 @@ class _state(param.Parameterized):
         The bokeh Document for which a server event is currently being
         processed.""")
 
+    _memoize_cache = param.Dict(default={}, doc="""
+       A dictionary used by the cache decorator.""")
+
     # Whether to hold comm events
     _hold: ClassVar[bool] = False
 
@@ -142,6 +145,9 @@ class _state(param.Parameterized):
 
     # Jupyter display handles
     _handles: ClassVar[Dict[str, [DisplayHandle, List[str]]]] = {}
+
+    # Stacks for hashing
+    _stacks = WeakKeyDictionary()
 
     # Dictionary of callbacks to be triggered on app load
     _onload: ClassVar[Dict[Document, Callable[[], None]]] = WeakKeyDictionary()
@@ -257,6 +263,16 @@ class _state(param.Parameterized):
         # Clean up templates
         if doc in self._templates:
             del self._templates[doc]
+
+    @property
+    def _current_stack(self):
+        current_thread = threading.current_thread()
+        stack = self._stacks.get(current_thread, None)
+        if stack is None:
+            from .cache import _Stack
+            stack = _Stack()
+            self._stacks[current_thread] = stack
+        return stack
 
     def _get_callback(self, endpoint: str):
         _updating: Dict[int, bool] = {}
