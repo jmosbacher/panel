@@ -1,0 +1,2015 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>MatplotlibStyle — Panel v0.13.1</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../../_static/togglebutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon">
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="PlotlyStyle.html" rel="next" title="PlotlyStyle"/>
+<link href="../links/vega_heatmap_link.html" rel="prev" title="Vega Heatmap Link"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-154795830-2', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="60" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../index.html">
+<img alt="logo" class="logo" src="../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="reference internal nav-link" href="../index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../api/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/c/panel/5" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../index.html">
+   Home
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../getting_started/index.html">
+   Getting Started
+  </a>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../user_guide/index.html">
+   User Guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Overview.html">
+     Overview
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Components.html">
+     Components
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/APIs.html">
+     APIs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Customization.html">
+     Customization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Deploy_and_Export.html">
+     Deploy &amp; Export
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Interact.html">
+     Interact
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Widgets.html">
+     Widgets
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Param.html">
+     Parameters
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Links.html">
+     Linking
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Pipelines.html">
+     Pipelines
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Templates.html">
+     Templates
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Server_Deployment.html">
+     Server Deployment
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Custom_Components.html">
+     Building Custom Components
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Async_and_Concurrency.html">
+     Asynchronous and Concurrent Process
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Authentication.html">
+     Authentication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Performance_and_Debugging.html">
+     Performance and Debugging
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../user_guide/Django_Apps.html">
+     Django Apps
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../index.html">
+   Gallery
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2">
+<a class="reference internal" href="../demos/VTKInteractive.html">
+     VTKInteractive
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../demos/VTKSlicer.html">
+     VTKSlicer
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../demos/VTKWarp.html">
+     VTKWarp
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../demos/attractors.html">
+     Attractors
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../demos/gapminders.html">
+     Gapminders
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../demos/glaciers.html">
+     Glaciers
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../demos/nyc_taxi.html">
+     Nyc Taxi
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../demos/portfolio-optimizer.html">
+     Portfolio-optimizer
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/altair_choropleth.html">
+     Altair Choropleth
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/clifford_interact.html">
+     Clifford Interact
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/color_speech_recognition.html">
+     Color Speech Recognition
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/deckgl_game_of_life.html">
+     Deckgl Game Of Life
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/defer_data_load.html">
+     Defer Data Load
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/file_download_examples.html">
+     File Download Examples
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/iris_kmeans.html">
+     Iris Kmeans
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/loading_spinner.html">
+     Loading Spinner
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/random_number_generator.html">
+     Random Number Generator
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/save_filtered_df.html">
+     Save Filtered Df
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/sync_location.html">
+     Sync Location
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../simple/temperature_distribution.html">
+     Temperature Distribution
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../apis/stocks_altair.html">
+     Stocks Altair
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../apis/stocks_hvplot.html">
+     Stocks Hvplot
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../apis/stocks_matplotlib.html">
+     Stocks Matplotlib
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../apis/stocks_plotly.html">
+     Stocks Plotly
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../layout/distribution_tabs.html">
+     Distribution Tabs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../layout/dynamic_tabs.html">
+     Dynamic Tabs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../layout/plot_with_columns.html">
+     Plot With Columns
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../dynamic/dynamic_plot_layout.html">
+     Dynamic Plot Layout
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../dynamic/dynamic_timeseries_image_analysis.html">
+     Dynamic Timeseries Image Analysis
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../dynamic/dynamic_ui.html">
+     Dynamic Ui
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../dynamic/dynamic_widget_values.html">
+     Dynamic Widget Values
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../param/action_button.html">
+     Action Button
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../param/deck_gl_global_power_plants.html">
+     Deck Gl Global Power Plants
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../param/download_upload_csv.html">
+     Download Upload Csv
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../param/loading_indicator.html">
+     Loading Indicator
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../param/param_subobjects.html">
+     Param Subobjects
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../param/precedence.html">
+     Precedence
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../param/reactive_plots.html">
+     Reactive Plots
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../param/reactive_tables.html">
+     Reactive Tables
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../streaming/hardware_automation.html">
+     Hardware Automation
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../streaming/streaming_bokeh.html">
+     Streaming Bokeh
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../streaming/streaming_indicator.html">
+     Streaming Indicator
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../streaming/streaming_perspective.html">
+     Streaming Perspective
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../streaming/streaming_tabulator.html">
+     Streaming Tabulator
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../components/CanvasDraw.html">
+     CanvasDraw
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../components/LeafletHeatMap.html">
+     LeafletHeatMap
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../components/MaterialUI.html">
+     MaterialUI
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../links/bokeh_property_editor.html">
+     Bokeh Property Editor
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../links/deck_gl_json_editor.html">
+     Deck Gl Json Editor
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../links/holoviews_glyph_link.html">
+     Holoviews Glyph Link
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../links/plotly_link.html">
+     Plotly Link
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../links/vega_heatmap_link.html">
+     Vega Heatmap Link
+    </a>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     MatplotlibStyle
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="PlotlyStyle.html">
+     PlotlyStyle
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="VegaAltairStyle.html">
+     VegaAltairStyle
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../external/DataTable.html">
+     DataTable
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../external/Folium.html">
+     Folium
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../external/deck.gl.html">
+     Deck.gl
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../reference/index.html">
+   Reference Gallery
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Alert.html">
+     Alert
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Audio.html">
+     Audio
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Bokeh.html">
+     Bokeh
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/DataFrame.html">
+     DataFrame
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/DeckGL.html">
+     DeckGL
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/ECharts.html">
+     ECharts
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Folium.html">
+     Folium
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/GIF.html">
+     GIF
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/HTML.html">
+     HTML
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/HoloViews.html">
+     HoloViews
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/IDOM.html">
+     IDOM
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/IPyWidget.html">
+     IPyWidget
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/JPG.html">
+     JPG
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/JSON.html">
+     JSON
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/LaTeX.html">
+     LaTeX
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Markdown.html">
+     Markdown
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Matplotlib.html">
+     Matplotlib
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/PDF.html">
+     PDF
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/PNG.html">
+     PNG
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Param.html">
+     Param
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Perspective.html">
+     Perspective
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Plotly.html">
+     Plotly
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/SVG.html">
+     SVG
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Str.html">
+     Str
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Streamz.html">
+     Streamz
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/VTK.html">
+     VTK
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/VTKJS.html">
+     VTKJS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/VTKVolume.html">
+     VTKVolume
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Vega.html">
+     Vega
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/panes/Video.html">
+     Video
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/layouts/Accordion.html">
+     Accordion
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/layouts/Card.html">
+     Card
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/layouts/Column.html">
+     Column
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/layouts/Divider.html">
+     Divider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/layouts/FlexBox.html">
+     FlexBox
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/layouts/GridBox.html">
+     GridBox
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/layouts/GridSpec.html">
+     GridSpec
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/layouts/GridStack.html">
+     GridStack
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/layouts/Row.html">
+     Row
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/layouts/Tabs.html">
+     Tabs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/layouts/WidgetBox.html">
+     WidgetBox
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/templates/Bootstrap.html">
+     Bootstrap
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/templates/FastGridTemplate.html">
+     FastGridTemplate
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/templates/FastListTemplate.html">
+     FastListTemplate
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/templates/GoldenLayout.html">
+     GoldenLayout
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/templates/Material.html">
+     Material
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/templates/React.html">
+     React
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/templates/Vanilla.html">
+     Vanilla
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/global/Notifications.html">
+     Notifications
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/indicators/BooleanStatus.html">
+     BooleanStatus
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/indicators/Dial.html">
+     Dial
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/indicators/Gauge.html">
+     Gauge
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/indicators/LinearGauge.html">
+     LinearGauge
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/indicators/LoadingSpinner.html">
+     LoadingSpinner
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/indicators/Number.html">
+     Number
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/indicators/Progress.html">
+     Progress
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/indicators/Tqdm.html">
+     Tqdm
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/indicators/Trend.html">
+     Trend
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/Ace.html">
+     Ace
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/ArrayInput.html">
+     ArrayInput
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/AutocompleteInput.html">
+     AutocompleteInput
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/Button.html">
+     Button
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/CheckBoxGroup.html">
+     CheckBoxGroup
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/CheckButtonGroup.html">
+     CheckButtonGroup
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/Checkbox.html">
+     Checkbox
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/ColorPicker.html">
+     ColorPicker
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/CrossSelector.html">
+     CrossSelector
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/DataFrame.html">
+     DataFrame
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/DatePicker.html">
+     DatePicker
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/DateRangeSlider.html">
+     DateRangeSlider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/DateSlider.html">
+     DateSlider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/DatetimeInput.html">
+     DatetimeInput
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/DatetimePicker.html">
+     DatetimePicker
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/DatetimeRangeInput.html">
+     DatetimeRangeInput
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/DatetimeRangePicker.html">
+     DatetimeRangePicker
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/DatetimeRangeSlider.html">
+     DatetimeRangeSlider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/Debugger.html">
+     Debugger
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/DiscretePlayer.html">
+     DiscretePlayer
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/DiscreteSlider.html">
+     DiscreteSlider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/EditableFloatSlider.html">
+     EditableFloatSlider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/EditableIntSlider.html">
+     EditableIntSlider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/EditableRangeSlider.html">
+     EditableRangeSlider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/FileDownload.html">
+     FileDownload
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/FileInput.html">
+     FileInput
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/FileSelector.html">
+     FileSelector
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/FloatInput.html">
+     FloatInput
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/FloatSlider.html">
+     FloatSlider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/IntInput.html">
+     IntInput
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/IntRangeSlider.html">
+     IntRangeSlider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/IntSlider.html">
+     IntSlider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/JSONEditor.html">
+     JSONEditor
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/LiteralInput.html">
+     LiteralInput
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/MenuButton.html">
+     MenuButton
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/MultiChoice.html">
+     MultiChoice
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/MultiSelect.html">
+     MultiSelect
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/PasswordInput.html">
+     PasswordInput
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/Player.html">
+     Player
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/RadioBoxGroup.html">
+     RadioBoxGroup
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/RadioButtonGroup.html">
+     RadioButtonGroup
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/RangeSlider.html">
+     RangeSlider
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/Select.html">
+     Select
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/SpeechToText.html">
+     SpeechToText
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/StaticText.html">
+     StaticText
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/Tabulator.html">
+     Tabulator
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/Terminal.html">
+     Terminal
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/TextAreaInput.html">
+     TextAreaInput
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/TextEditor.html">
+     TextEditor
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/TextInput.html">
+     TextInput
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/TextToSpeech.html">
+     TextToSpeech
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/Toggle.html">
+     Toggle
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/ToggleGroup.html">
+     ToggleGroup
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/widgets/VideoStream.html">
+     VideoStream
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../developer_guide/index.html">
+   Developers
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../developer_guide/index.html">
+     Getting Set up
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../developer_guide/testing.html">
+     Testing
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../api/index.html">
+   API
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../api/panel.io.html">
+     io
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../api/panel.layout.html">
+     layout
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../api/panel.pane.html">
+     pane
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../api/panel.pane.vtk.html">
+       panel.vtk Package
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../api/panel.param.html">
+     param
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../api/panel.pipeline.html">
+     pipeline
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../api/panel.template.html">
+     template
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../api/panel.template.bootstrap.html">
+       panel.bootstrap Package
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../api/panel.template.fast.html">
+       panel.fast Package
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../api/panel.template.fast.grid.html">
+         panel.grid Package
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../api/panel.template.fast.list.html">
+         panel.list Package
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../api/panel.template.golden.html">
+       panel.golden Package
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../api/panel.template.material.html">
+       panel.material Package
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../api/panel.template.react.html">
+       panel.react Package
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../api/panel.template.theme.html">
+       panel.theme Package
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../api/panel.template.vanilla.html">
+       panel.vanilla Package
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../api/panel.widgets.html">
+     widgets
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../api/panel.viewable.html">
+     viewable
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../api/panel.util.html">
+     util
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../releases.html">
+   Releases
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../FAQ.html">
+   FAQ
+  </a>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../about/index.html">
+   About
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../about/comparisons.html">
+     Comparisons
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#styling-matplotlib-for-panel">
+   Styling Matplotlib for Panel
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#get-or-set-the-theme">
+   Get or set the theme
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#select-a-nice-accent-color">
+   Select a nice accent color
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#matplotlib">
+   Matplotlib
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#style-the-app-template">
+   Style the app template
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+<a href="https://mybinder.org/v2/gh/holoviz/panel/v0.13.1?urlpath=lab/tree/examples/gallery/styles/MatplotlibStyle.ipynb" style="padding-left: 1.5rem;">Open this page in Binder</a>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<section id="matplotlibstyle">
+<span id="styles-gallery-matplotlibstyle"></span><h1>MatplotlibStyle<a class="headerlink" href="#matplotlibstyle" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/gallery/styles/MatplotlibStyle.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+<hr class="docutils"/>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">from</span> <span class="nn">matplotlib.figure</span> <span class="kn">import</span> <span class="n">Figure</span>
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s2">"stretch_width"</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="s2">"fast"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, js_modules, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+    if (js_modules == null) js_modules = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls.length === 0 && js_modules.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    var skip = [];
+    if (window.requirejs) {
+      window.requirejs.config({'packages': {}, 'paths': {'gridstack': 'https://cdn.jsdelivr.net/npm/gridstack@4.2.5/dist/gridstack-h5', 'notyf': 'https://cdn.jsdelivr.net/npm/notyf@3/notyf.min'}, 'shim': {'gridstack': {'exports': 'GridStack'}}});
+      require(["gridstack"], function(GridStack) {
+	window.GridStack = GridStack
+	on_load()
+      })
+      require(["notyf"], function() {
+	on_load()
+      })
+      root._bokeh_is_loading = css_urls.length + 2;
+    } else {
+      root._bokeh_is_loading = css_urls.length + js_urls.length + js_modules.length;
+    }    if (((window['GridStack'] !== undefined) && (!(window['GridStack'] instanceof HTMLElement))) || window.requirejs) {
+      var urls = ['https://cdn.jsdelivr.net/npm/gridstack@4.2.5/dist/gridstack-h5.js'];
+      for (var i = 0; i < urls.length; i++) {
+        skip.push(urls[i])
+      }
+    }    if (((window['Notyf'] !== undefined) && (!(window['Notyf'] instanceof HTMLElement))) || window.requirejs) {
+      var urls = ['https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js'];
+      for (var i = 0; i < urls.length; i++) {
+        skip.push(urls[i])
+      }
+    }    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    for (var i = 0; i < js_modules.length; i++) {
+      var url = js_modules[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      element.type = "module";
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    if (!js_urls.length && !js_modules.length) {
+      on_load()
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.3.min.js", "https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js", "https://unpkg.com/@holoviz/panel@0.13.1/dist/panel.min.js"];
+  var js_modules = [];
+  var css_urls = ["https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css", "https://unpkg.com/@holoviz/panel@0.13.1/dist/css/alerts.css", "https://unpkg.com/@holoviz/panel@0.13.1/dist/css/debugger.css", "https://unpkg.com/@holoviz/panel@0.13.1/dist/css/widgets.css", "https://unpkg.com/@holoviz/panel@0.13.1/dist/css/markdown.css", "https://unpkg.com/@holoviz/panel@0.13.1/dist/css/card.css", "https://unpkg.com/@holoviz/panel@0.13.1/dist/css/dataframe.css", "https://unpkg.com/@holoviz/panel@0.13.1/dist/css/loading.css", "https://unpkg.com/@holoviz/panel@0.13.1/dist/css/json.css"];
+  var inline_js = [    function(Bokeh) {
+      inject_raw_css("\n    .bk.pn-loading.arcs:before {\n      background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4gIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMyIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZT0iI2MzYzNjMyIgc3Ryb2tlLWRhc2hhcnJheT0iNTAuMjY1NDgyNDU3NDM2NjkgNTAuMjY1NDgyNDU3NDM2NjkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIga2V5VGltZXM9IjA7MSIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCI+PC9hbmltYXRlVHJhbnNmb3JtPiAgPC9jaXJjbGU+PC9zdmc+\");\n      background-size: auto calc(min(50%, 400px));\n    }\n    ");
+    },    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+function(Bokeh) {} // ensure no trailing comma for IE
+  ];
+
+  function run_inline_js() {
+    if ((root.Bokeh !== undefined) || (force === true)) {
+      for (var i = 0; i < inline_js.length; i++) {
+        inline_js[i].call(root, root.Bokeh);
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, js_modules, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><script type="application/javascript">
+if ((window.PyViz === undefined) || (window.PyViz instanceof HTMLElement)) {
+  window.PyViz = {comms: {}, comm_status:{}, kernels:{}, receivers: {}, plot_index: []}
+}
+
+
+    function JupyterCommManager() {
+    }
+
+    JupyterCommManager.prototype.register_target = function(plot_id, comm_id, msg_handler) {
+      if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        comm_manager.register_target(comm_id, function(comm) {
+          comm.on_msg(msg_handler);
+        });
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        window.PyViz.kernels[plot_id].registerCommTarget(comm_id, function(comm) {
+          comm.onMsg = msg_handler;
+        });
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        google.colab.kernel.comms.registerTarget(comm_id, (comm) => {
+          var messages = comm.messages[Symbol.asyncIterator]();
+          function processIteratorResult(result) {
+            var message = result.value;
+            console.log(message)
+            var content = {data: message.data, comm_id};
+            var buffers = []
+            for (var buffer of message.buffers || []) {
+              buffers.push(new DataView(buffer))
+            }
+            var metadata = message.metadata || {};
+            var msg = {content, buffers, metadata}
+            msg_handler(msg);
+            return messages.next().then(processIteratorResult);
+          }
+          return messages.next().then(processIteratorResult);
+        })
+      }
+    }
+
+    JupyterCommManager.prototype.get_client_comm = function(plot_id, comm_id, msg_handler) {
+      if (comm_id in window.PyViz.comms) {
+        return window.PyViz.comms[comm_id];
+      } else if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        var comm = comm_manager.new_comm(comm_id, {}, {}, {}, comm_id);
+        if (msg_handler) {
+          comm.on_msg(msg_handler);
+        }
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        var comm = window.PyViz.kernels[plot_id].connectToComm(comm_id);
+        comm.open();
+        if (msg_handler) {
+          comm.onMsg = msg_handler;
+        }
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        var comm_promise = google.colab.kernel.comms.open(comm_id)
+        comm_promise.then((comm) => {
+          window.PyViz.comms[comm_id] = comm;
+          if (msg_handler) {
+            var messages = comm.messages[Symbol.asyncIterator]();
+            function processIteratorResult(result) {
+              var message = result.value;
+              var content = {data: message.data};
+              var metadata = message.metadata || {comm_id};
+              var msg = {content, metadata}
+              msg_handler(msg);
+              return messages.next().then(processIteratorResult);
+            }
+            return messages.next().then(processIteratorResult);
+          }
+        }) 
+        var sendClosure = (data, metadata, buffers, disposeOnDone) => {
+          return comm_promise.then((comm) => {
+            comm.send(data, metadata, buffers, disposeOnDone);
+          });
+        };
+        var comm = {
+          send: sendClosure
+        };
+      }
+      window.PyViz.comms[comm_id] = comm;
+      return comm;
+    }
+    window.PyViz.comm_manager = new JupyterCommManager();
+    
+
+
+var JS_MIME_TYPE = 'application/javascript';
+var HTML_MIME_TYPE = 'text/html';
+var EXEC_MIME_TYPE = 'application/vnd.holoviews_exec.v0+json';
+var CLASS_NAME = 'output';
+
+/**
+ * Render data to the DOM node
+ */
+function render(props, node) {
+  var div = document.createElement("div");
+  var script = document.createElement("script");
+  node.appendChild(div);
+  node.appendChild(script);
+}
+
+/**
+ * Handle when a new output is added
+ */
+function handle_add_output(event, handle) {
+  var output_area = handle.output_area;
+  var output = handle.output;
+  if ((output.data == undefined) || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
+    return
+  }
+  var id = output.metadata[EXEC_MIME_TYPE]["id"];
+  var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+  if (id !== undefined) {
+    var nchildren = toinsert.length;
+    var html_node = toinsert[nchildren-1].children[0];
+    html_node.innerHTML = output.data[HTML_MIME_TYPE];
+    var scripts = [];
+    var nodelist = html_node.querySelectorAll("script");
+    for (var i in nodelist) {
+      if (nodelist.hasOwnProperty(i)) {
+        scripts.push(nodelist[i])
+      }
+    }
+
+    scripts.forEach( function (oldScript) {
+      var newScript = document.createElement("script");
+      var attrs = [];
+      var nodemap = oldScript.attributes;
+      for (var j in nodemap) {
+        if (nodemap.hasOwnProperty(j)) {
+          attrs.push(nodemap[j])
+        }
+      }
+      attrs.forEach(function(attr) { newScript.setAttribute(attr.name, attr.value) });
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+    if (JS_MIME_TYPE in output.data) {
+      toinsert[nchildren-1].children[1].textContent = output.data[JS_MIME_TYPE];
+    }
+    output_area._hv_plot_id = id;
+    if ((window.Bokeh !== undefined) && (id in Bokeh.index)) {
+      window.PyViz.plot_index[id] = Bokeh.index[id];
+    } else {
+      window.PyViz.plot_index[id] = null;
+    }
+  } else if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+    var bk_div = document.createElement("div");
+    bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+    var script_attrs = bk_div.children[0].attributes;
+    for (var i = 0; i < script_attrs.length; i++) {
+      toinsert[toinsert.length - 1].childNodes[1].setAttribute(script_attrs[i].name, script_attrs[i].value);
+    }
+    // store reference to server id on output_area
+    output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+  }
+}
+
+/**
+ * Handle when an output is cleared or removed
+ */
+function handle_clear_output(event, handle) {
+  var id = handle.cell.output_area._hv_plot_id;
+  var server_id = handle.cell.output_area._bokeh_server_id;
+  if (((id === undefined) || !(id in PyViz.plot_index)) && (server_id !== undefined)) { return; }
+  var comm = window.PyViz.comm_manager.get_client_comm("hv-extension-comm", "hv-extension-comm", function () {});
+  if (server_id !== null) {
+    comm.send({event_type: 'server_delete', 'id': server_id});
+    return;
+  } else if (comm !== null) {
+    comm.send({event_type: 'delete', 'id': id});
+  }
+  delete PyViz.plot_index[id];
+  if ((window.Bokeh !== undefined) & (id in window.Bokeh.index)) {
+    var doc = window.Bokeh.index[id].model.document
+    doc.clear();
+    const i = window.Bokeh.documents.indexOf(doc);
+    if (i > -1) {
+      window.Bokeh.documents.splice(i, 1);
+    }
+  }
+}
+
+/**
+ * Handle kernel restart event
+ */
+function handle_kernel_cleanup(event, handle) {
+  delete PyViz.comms["hv-extension-comm"];
+  window.PyViz.plot_index = {}
+}
+
+/**
+ * Handle update_display_data messages
+ */
+function handle_update_output(event, handle) {
+  handle_clear_output(event, {cell: {output_area: handle.output_area}})
+  handle_add_output(event, handle)
+}
+
+function register_renderer(events, OutputArea) {
+  function append_mime(data, metadata, element) {
+    // create a DOM node to render to
+    var toinsert = this.create_output_subarea(
+    metadata,
+    CLASS_NAME,
+    EXEC_MIME_TYPE
+    );
+    this.keyboard_manager.register_events(toinsert);
+    // Render to node
+    var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+    render(props, toinsert[0]);
+    element.append(toinsert);
+    return toinsert
+  }
+
+  events.on('output_added.OutputArea', handle_add_output);
+  events.on('output_updated.OutputArea', handle_update_output);
+  events.on('clear_output.CodeCell', handle_clear_output);
+  events.on('delete.Cell', handle_clear_output);
+  events.on('kernel_ready.Kernel', handle_kernel_cleanup);
+
+  OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+    safe: true,
+    index: 0
+  });
+}
+
+if (window.Jupyter !== undefined) {
+  try {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  } catch(err) {
+  }
+}
+</script><div class="output text_html"><style>.bk-root, .bk-root .bk:before, .bk-root .bk:after {
+  font-family: var(--jp-ui-font-size1);
+  font-size: var(--jp-ui-font-size1);
+  color: var(--jp-ui-font-color1);
+}
+</style></div></div>
+</div>
+<section id="styling-matplotlib-for-panel">
+<h2>Styling Matplotlib for Panel<a class="headerlink" href="#styling-matplotlib-for-panel" title="Permalink to this headline">#</a></h2>
+<p>In this example we will show how to style Matplotlib charts with Panel for both the <code class="docutils literal notranslate"><span class="pre">default</span></code> and the <code class="docutils literal notranslate"><span class="pre">dark</span></code> theme.</p>
+<p><img alt="MatplotlibStyle.gif" src="https://assets.holoviews.org/panel/thumbnails/gallery/styles/matplotlib-styles.gif"/></p>
+</section>
+<section id="get-or-set-the-theme">
+<h2>Get or set the theme<a class="headerlink" href="#get-or-set-the-theme" title="Permalink to this headline">#</a></h2>
+<p>When we use the Fast templates the <code class="docutils literal notranslate"><span class="pre">theme</span></code> can be found in the <code class="docutils literal notranslate"><span class="pre">session_args</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_theme</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">pn</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">session_args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"theme"</span><span class="p">,</span> <span class="p">[</span><span class="sa">b</span><span class="s1">'default'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theme</span><span class="o">=</span><span class="n">get_theme</span><span class="p">()</span>
+<span class="n">theme</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'default'
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="select-a-nice-accent-color">
+<h2>Select a nice accent color<a class="headerlink" href="#select-a-nice-accent-color" title="Permalink to this headline">#</a></h2>
+<p>Below we create some functionality to <em>cycle through</em> a list of nice accent colors. You would probably just set the <code class="docutils literal notranslate"><span class="pre">accent_color</span></code> and <code class="docutils literal notranslate"><span class="pre">color</span></code> for your specific use case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nice_accent_colors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"#00A170"</span><span class="p">,</span> <span class="s2">"white"</span><span class="p">),</span> <span class="c1"># Mint</span>
+    <span class="p">(</span><span class="s2">"#DAA520"</span><span class="p">,</span> <span class="s2">"white"</span><span class="p">),</span> <span class="c1"># Golden Rod</span>
+    <span class="p">(</span><span class="s2">"#F08080"</span><span class="p">,</span> <span class="s2">"white"</span><span class="p">),</span> <span class="c1"># Light Coral</span>
+    <span class="p">(</span><span class="s2">"#4099da"</span><span class="p">,</span> <span class="s2">"white"</span><span class="p">),</span> <span class="c1"># Summery Sky</span>
+    <span class="p">(</span><span class="s2">"#2F4F4F"</span><span class="p">,</span> <span class="s2">"white"</span><span class="p">),</span> <span class="c1"># Dark Slate Grey</span>
+    <span class="p">(</span><span class="s2">"#A01346"</span><span class="p">,</span> <span class="s2">"white"</span><span class="p">),</span> <span class="c1"># Fast</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_nice_accent_color</span><span class="p">():</span>
+    <span class="sd">"""Returns the 'next' nice accent color"""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="s2">"color_index"</span> <span class="ow">in</span> <span class="n">pn</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span>
+        <span class="n">pn</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="s2">"color_index"</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">pn</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="s2">"color_index"</span><span class="p">]</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">nice_accent_colors</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">pn</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="s2">"color_index"</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pn</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="s2">"color_index"</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">nice_accent_colors</span><span class="p">[</span><span class="n">pn</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="s2">"color_index"</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accent_color</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">get_nice_accent_color</span><span class="p">()</span>
+<span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"# Color: </span><span class="si">{</span><span class="n">accent_color</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="n">accent_color</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">"color"</span><span class="p">:</span> <span class="n">color</span><span class="p">,</span> <span class="s2">"padding"</span><span class="p">:</span> <span class="s2">"10px"</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1002">
+<div class="bk-root" data-root-id="1002" id="ef5112d0-cf27-4d7c-ba4c-9a55959fc205"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"503fcf14-fe33-457a-9902-be4e0083ac7d":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"GridStack1","overrides":[],"properties":[{"default":"warn","kind":null,"name":"mode"},{"default":null,"kind":null,"name":"ncols"},{"default":null,"kind":null,"name":"nrows"},{"default":true,"kind":null,"name":"allow_resize"},{"default":true,"kind":null,"name":"allow_drag"},{"default":[],"kind":null,"name":"state"}]},{"extends":null,"module":null,"name":"click1","overrides":[],"properties":[{"default":"","kind":null,"name":"terminal_output"},{"default":"","kind":null,"name":"debug_name"},{"default":0,"kind":null,"name":"clears"}]},{"extends":null,"module":null,"name":"NotificationAreaBase1","overrides":[],"properties":[{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"}]},{"extends":null,"module":null,"name":"NotificationArea1","overrides":[],"properties":[{"default":[],"kind":null,"name":"notifications"},{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"},{"default":[{"background":"#ffc107","icon":{"className":"fas fa-exclamation-triangle","color":"white","tagName":"i"},"type":"warning"},{"background":"#007bff","icon":{"className":"fas fa-info-circle","color":"white","tagName":"i"},"type":"info"}],"kind":null,"name":"types"}]},{"extends":null,"module":null,"name":"Notification","overrides":[],"properties":[{"default":null,"kind":null,"name":"background"},{"default":3000,"kind":null,"name":"duration"},{"default":null,"kind":null,"name":"icon"},{"default":"","kind":null,"name":"message"},{"default":null,"kind":null,"name":"notification_type"},{"default":false,"kind":null,"name":"_destroyed"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"client_comm_id":"dc7831209adc425e93d14d6386e274fd","comm_id":"6fdf71e98e694cdfb3d7fe6cb1f8f79b","plot_id":"1002"},"id":"1003","type":"panel.models.comm_manager.CommManager"},{"attributes":{"background":"#00A170","css_classes":["markdown"],"height":70,"margin":[0,0,0,0],"name":"Markdown02973","sizing_mode":"stretch_width","style":{"color":"white","padding":"10px"},"text":"&lt;h1&gt;Color: #00A170&lt;/h1&gt;"},"id":"1002","type":"panel.models.markup.HTML"},{"attributes":{"reload":false},"id":"1004","type":"panel.models.location.Location"}],"root_ids":["1002","1003","1004"]},"title":"Bokeh Application","version":"2.4.3"}};
+    var render_items = [{"docid":"503fcf14-fe33-457a-9902-be4e0083ac7d","root_ids":["1002"],"roots":{"1002":"ef5112d0-cf27-4d7c-ba4c-9a55959fc205"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+<section id="matplotlib">
+<h2>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h2>
+<p>There are nearly 30 builtin styles to matplotlib that can be activated with the <code class="docutils literal notranslate"><span class="pre">plt.style.use</span></code> function. The style names are available in the <code class="docutils literal notranslate"><span class="pre">plt.style.available</span></code> list.</p>
+<p>Let’s define a <a class="reference external" href="https://panel.holoviz.org/reference/widgets/Select.html"><code class="docutils literal notranslate"><span class="pre">Select</span></code></a> widget to explore the templates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style</span><span class="o">=</span><span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="n">style</span> <span class="k">for</span> <span class="n">style</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">available</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">style</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"_"</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the theme is <code class="docutils literal notranslate"><span class="pre">dark</span></code> we will use the <code class="docutils literal notranslate"><span class="pre">dark_background</span></code> style as the default value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">theme</span><span class="o">==</span><span class="s2">"dark"</span><span class="p">:</span>
+    <span class="n">style</span><span class="o">.</span><span class="n">value</span><span class="o">=</span><span class="s2">"dark_background"</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lets define a plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">.1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">.1</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">get_plot</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">"default"</span><span class="p">,</span> <span class="n">accent_color</span><span class="o">=</span><span class="n">accent_color</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span> <span class="c1"># Resets to default style. Just in case it was styled to something non-default somewhere else in your app</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">style</span><span class="p">)</span> <span class="c1"># changes to the specified style</span>
+    <span class="n">fig0</span> <span class="o">=</span> <span class="n">Figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">ax0</span> <span class="o">=</span> <span class="n">fig0</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">accent_color</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Matplotlib Style: </span><span class="si">{</span><span class="n">style</span><span class="si">}</span><span class="s1">'</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span> <span class="c1"># Resets to default style. Do this if you are styling matplotlib in multiple places in your app.</span>
+    <span class="k">return</span> <span class="n">fig0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lets <a class="reference external" href="https://panel.holoviz.org/user_guide/APIs.html#reactive-functions">bind</a> <code class="docutils literal notranslate"><span class="pre">get_plot</span></code> to the <code class="docutils literal notranslate"><span class="pre">style</span></code> widet and lay out the two in a <code class="docutils literal notranslate"><span class="pre">Column</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_plot</span><span class="o">=</span><span class="n">pn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">get_plot</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
+<span class="n">matplotlib_component</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">get_plot</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">"scale_width"</span><span class="p">))</span>
+<span class="n">matplotlib_component</span><span class="o">.</span><span class="n">servable</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1005">
+<div class="bk-root" data-root-id="1005" id="e3a58732-b989-4a78-b3c1-9b62ba3ed46e"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"a9cc845e-b43c-485c-8db4-5fd4d3d207f9":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"GridStack1","overrides":[],"properties":[{"default":"warn","kind":null,"name":"mode"},{"default":null,"kind":null,"name":"ncols"},{"default":null,"kind":null,"name":"nrows"},{"default":true,"kind":null,"name":"allow_resize"},{"default":true,"kind":null,"name":"allow_drag"},{"default":[],"kind":null,"name":"state"}]},{"extends":null,"module":null,"name":"click1","overrides":[],"properties":[{"default":"","kind":null,"name":"terminal_output"},{"default":"","kind":null,"name":"debug_name"},{"default":0,"kind":null,"name":"clears"}]},{"extends":null,"module":null,"name":"NotificationAreaBase1","overrides":[],"properties":[{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"}]},{"extends":null,"module":null,"name":"NotificationArea1","overrides":[],"properties":[{"default":[],"kind":null,"name":"notifications"},{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"},{"default":[{"background":"#ffc107","icon":{"className":"fas fa-exclamation-triangle","color":"white","tagName":"i"},"type":"warning"},{"background":"#007bff","icon":{"className":"fas fa-info-circle","color":"white","tagName":"i"},"type":"info"}],"kind":null,"name":"types"}]},{"extends":null,"module":null,"name":"Notification","overrides":[],"properties":[{"default":null,"kind":null,"name":"background"},{"default":3000,"kind":null,"name":"duration"},{"default":null,"kind":null,"name":"icon"},{"default":"","kind":null,"name":"message"},{"default":null,"kind":null,"name":"notification_type"},{"default":false,"kind":null,"name":"_destroyed"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,10,5,10],"options":["Solarize_Light2","bmh","classic","dark_background","fast","fivethirtyeight","ggplot","grayscale","seaborn","seaborn-bright","seaborn-colorblind","seaborn-dark","seaborn-dark-palette","seaborn-darkgrid","seaborn-deep","seaborn-muted","seaborn-notebook","seaborn-paper","seaborn-pastel","seaborn-poster","seaborn-talk","seaborn-ticks","seaborn-white","seaborn-whitegrid","tableau-colorblind10"],"sizing_mode":"stretch_width","value":"Solarize_Light2"},"id":"1006","type":"panel.models.widgets.CustomSelect"},{"attributes":{"client_comm_id":"c9f4db09b2c04e9db830498e0fcac949","comm_id":"bd205b3077a343e5856faa19152f432b","plot_id":"1005"},"id":"1009","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1008"}],"height":500,"margin":[0,0,0,0],"name":"Row02983","sizing_mode":"scale_width"},"id":"1007","type":"Row"},{"attributes":{"children":[{"id":"1006"},{"id":"1007"}],"margin":[0,0,0,0],"name":"Column02986","sizing_mode":"stretch_width"},"id":"1005","type":"Column"},{"attributes":{"height":500,"margin":[5,5,5,5],"name":"ParamFunction02979","sizing_mode":"scale_width","text":"&lt;img src=&quot;data:image/png;base64,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qybvm8jICF184Tl67Y1JKisr0wcff6mbbrjyiHXeevdj//aE8WNrHNr958kXde+DT/r3e3bvohOGDFTj1BSVlJRq4eLlmjp9prxerx594gUVFRfrv088UKNa1dU4NUUbNm6RJP089Tedd87px3zOnJxcnTD8PG3ctFWSDnpvWa1WLVqyQj9PnSGPx6NZc/7QkGHnav6s744aSB5OYVGxSkpKZbFY1KdXN/Xs0VXNmjZWZGSEcvPytWTpSv0yY448Ho9+njpDF1zyN/383YeyWo88KYphGBo34f80ZdpviouL1ajThqlj+zS5XC4tXLxcNlvVJ1Wp7PNdmWdfmKjdezIkSU6H89DXWlikk0+9QIuXrig/xunUKcNOUM/unRUdHaU9e/fp56kztH7DZu3ek6FTTr9IM6Z8qgH9e1e517rI6/XqnDET9NusP9cDHHrCIA0+rr+cTqdWrVmn736Ypnfen6yUlKRqnXvnrj0adc5l2rM3Q926dtQpw05QSnKSdu7aoy+++lF79mbI5XLp8qtuVq8eXZTWtrX/ubX1d9jR7Nq1x7+dnFy91wcAANBQEYABAACEuKSkBJ056hR98dUP+vrbn5WTk6uEhPiDjnnnvckyDENS9aY/bNokVS8996guvvCcw46mWLpslUZfdI22bkvXe5M+05WXX6QTBg/0Px4bG6Pbb7lO0p8XD2Nj/ryvqp578Q1FRITr4/df0ZmjTjnosfUbNuus8y/Xxk1btWv3Xt1w87/01advVev8+/08dcZB4ddjD9+tO267/qAL6U8/fp+uvv4f+vTz7+T1enXtDXdqUP/eatbsz3XV9r++l1991x+AVfc115bnXnxDycmJ+uazdzRwwMEXyf9YsERnjb5CmZnZWrV6ve554Ak99/RDNarjdDo19IRBmv7rbEnSTbfeK7vdrvPPOV02m61a56rp++aaKy/Va29MkiS9/e4nRwzAXC6XPvj4S0nlAc7l4y447LFHMmXab7rvoackSY0aJeudic9q5IiTDjlu6bJVOu/Cq7Q9faeee/ENjTptuIafPKRGNatjxPATNWvOH5KkiW99oJYtmuqmG65UTEx0jc/591vu8YdfjVMb6ZvP31bfPj0OOmbpslU66/zLtWv3Xm3esl3X3fRPTf7g1RrVi4uN0WMP360J48eqUaPkSo/ZvGWbxl56vRYvXaFf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&quot; width=&quot;100%&quot; height=&quot;auto&quot; alt=&quot;&quot;&gt;&lt;/img&gt;","width":1000},"id":"1008","type":"panel.models.markup.HTML"}],"root_ids":["1005","1009"]},"title":"Bokeh Application","version":"2.4.3"}};
+    var render_items = [{"docid":"a9cc845e-b43c-485c-8db4-5fd4d3d207f9","root_ids":["1005"],"roots":{"1005":"e3a58732-b989-4a78-b3c1-9b62ba3ed46e"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>For more check out the <a class="reference external" href="https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html">Matplotlib style sheets reference</a> and the alternative themes <a class="reference external" href="https://draculatheme.com/matplotlib">dracula theme</a> and <a class="reference external" href="https://towardsdatascience.com/a-new-plot-theme-for-matplotlib-gadfly-2cffc745ff84">gadfly</a>.</p>
+</section>
+<section id="style-the-app-template">
+<h2>Style the app template<a class="headerlink" href="#style-the-app-template" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pn</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">accent_base_color</span><span class="o">=</span><span class="n">accent_color</span><span class="p">,</span> <span class="n">header_background</span><span class="o">=</span><span class="n">accent_color</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can serve the app via <code class="docutils literal notranslate"><span class="pre">panel</span> <span class="pre">serve</span> <span class="pre">MatplotlibStyle.ipynb</span></code> and find it at <code class="docutils literal notranslate"><span class="pre">http://localhost:5006/MatplotlibStyle</span></code>. You should add the <code class="docutils literal notranslate"><span class="pre">--autoreload</span></code> flag while developing for <em>hot reloading</em>.</p>
+</section>
+<div id="scroller-right">This web page was generated from a Jupyter notebook and not all interactivity will work on this website. <a href="https://raw.githubusercontent.com/holoviz/panel/v0.13.1/examples/gallery/styles/MatplotlibStyle.ipynb">Right click to download and run locally</a> for full Python-backed interactivity.</div><hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/gallery/styles/MatplotlibStyle.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+</section>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="../links/vega_heatmap_link.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Vega Heatmap Link</p>
+</div>
+</a>
+<a class="right-next" href="PlotlyStyle.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">PlotlyStyle</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2022 Holoviz contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="last-updated">
+Last updated on 2022-05-24.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
